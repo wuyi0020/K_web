@@ -1,0 +1,54 @@
+# 忽略 other 資料夾及其所有內容
+other/
+
+# Node.js 相關
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# 日誌文件
+*.log
+
+# 操作系統文件
+.DS_Store
+Thumbs.db
+
+# 編譯文件
+dist/
+build/
+out/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# SASS 相關
+.sass-cache/
+*.css.map
+
+# 環境配置文件
+.env
+.env.local
+.env.*.local
+
+# IDE 和編輯器相關
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 臨時文件
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.tmp
+*~
+
+# 其他
+coverage/
+*.pid

@@ -1,0 +1,93 @@
+:root {
+  --dark-color: hsl(0, 0%, 45%);
+  --background-color: hsl(0, 0%, 90%);
+  --info-hover-color: hsl(0, 0%, 45%);
+  --card-color: hsl(0, 0%, 45%);
+  --body-color: hsl(0, 0%, 90%);
+  --dark-background-text-color: hsl(0, 0%, 100%);
+  --background-text-color: hsl(0, 0%, 15%);
+}
+/*
+:root {
+  --dark-color: #a68a7b;
+  --background-color: #d9bca3;
+  --info-hover-color: #8c7268;
+  --card-color: #493a35;
+  --body-color: #f9d8bb;
+}
+*/
+@media screen {
+  .logo {
+    height: 110px;
+    padding: 0px;
+  }
+  .logo img {
+    height: 110px;
+  }
+  .fs-nav {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 992px) {
+  .logo {
+    height: 220px;
+    padding: 0px;
+  }
+  .logo img {
+    height: 220px;
+  }
+  .fs-nav {
+    font-size: xx-large;
+  }
+}
+.main_hight {
+  min-height: calc(100vh - 72px);
+}
+.navbar {
+  background-clip: padding-box !important;
+}
+.nav-item.active {
+  padding: 14px 22px !important;
+}
+.vh-50 {
+  height: 50vh !important;
+}
+.h-footer-title {
+  height: 70px;
+}
+.footer-content-banner {
+  height: 263px;
+  background-image: url("../photo/outside/outside09.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px 85%;
+}
+.bg-footer {
+  background-color: #9d5b2c !important;
+}
+.z-4 {
+  z-index: 4;
+}
+.loader-background {
+  animation: fadeOut 1s forwards 1s, height-0 0.1s forwards 1.5s;
+}
+.loader {
+  background-image: url("../photo/K_banner.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.loader-animation {
+  animation: slideInUp 1s forwards 0s, fadeOut 1s forwards 1s, zoomOut 1s forwards 1s, height-0 0.1s forwards 2s;
+}
+.Loading-animation {
+  animation: height-0 2s forwards 0s;
+}
+@keyframes height-0 {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 100%;
+  }
+}

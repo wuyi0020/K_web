@@ -1,0 +1,93 @@
+:root {
+  --dark-color: hsl(0, 0%, 45%);
+  --background-color: hsl(0, 0%, 90%);
+  --info-hover-color: hsl(0, 0%, 45%);
+  --card-color: hsl(0, 0%, 45%);
+  --body-color: hsl(0, 0%, 90%);
+  --dark-background-text-color: hsl(0, 0%, 100%);
+  --background-text-color: hsl(0, 0%, 15%);
+}
+/*
+:root {
+  --dark-color: #a68a7b;
+  --background-color: #d9bca3;
+  --info-hover-color: #8c7268;
+  --card-color: #493a35;
+  --body-color: #f9d8bb;
+}
+*/
+@media screen {
+  .logo {
+    height: 110px;
+    padding: 0px;
+    img {
+      height: 110px;
+    }
+  }
+  .fs-nav {
+    font-size: x-large;
+  }
+  .footer-container {
+    height: 767px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .logo {
+    height: 220px;
+    padding: 0px;
+    img {
+      height: 220px;
+    }
+  }
+  .fs-nav {
+    font-size: xx-large;
+  }
+}
+
+
+@mixin max-height($percentage) {
+  max-height: $percentage;
+}
+@mixin height($percentage) {
+  height: $percentage;
+}
+
+$heights: (
+  "100": 100%,
+  "90": 90%,
+  "80": 80%,
+  "70": 70%,
+  "60": 60%,
+  "50": 50%,
+  "40": 40%,
+  "30": 30%,
+  "20": 20%,
+  "10": 10%,
+);
+
+@each $name, $value in $heights {
+  .max-h-#{$name} {
+    @include max-height($value);
+  }
+}
+@each $name, $value in $heights {
+  .h-#{$name} {
+    @include height($value);
+  }
+}
+
+.main_hight {
+  min-height: calc(100vh - 72px);
+}
+.navbar {
+  background-clip: padding-box !important;
+}
+.nav-item.active {
+  padding: 14px 22px !important;
+}
+.nav-item.mybg-info:hover {
+  transition: all 0.1s linear;
+  padding: 12px 20px 12px 20px !important;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
