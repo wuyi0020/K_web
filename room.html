@@ -16,9 +16,9 @@
 
     <meta property="og:title" content="卡柏兒民宿 - 北歐風民宿" />
     <meta
-    name="og:description"
-    content="卡柏兒民宿是一間位於臺南市的北歐風民宿，約5~9人包棟。離一號高速公路不遠、大橋火車站旁，約15分到花園夜市。"
-  />
+      name="og:description"
+      content="卡柏兒民宿是一間位於臺南市的北歐風民宿，約5~9人包棟。離一號高速公路不遠、大橋火車站旁，約15分到花園夜市。"
+    />
     <meta
       property="og:image"
       content="https://scontent.ftpe14-1.fna.fbcdn.net/v/t39.30808-6/257921174_1626254807710752_4626691879194431448_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=OuIKI_H11gEQ7kNvgFEJW-E&_nc_ht=scontent.ftpe14-1.fna&oh=00_AYCfafwHoRLEsJ4aqye975SdEA3UKYV_gfisquwLe2m8Xg&oe=667FB8ED"
@@ -26,8 +26,9 @@
     <meta property="og:image:width" content="297" />
     <meta property="og:image:height" content="297" />
     <meta name="copyright" content="卡柏兒民宿" />
-
     <title>卡柏兒-民宿</title>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- Bootstrap 5.3.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -43,14 +44,15 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   </head>
-  <body class="h-100">
+  <body class="h-100 bg-main">
     <div class="h-100" id="top">
-      <nav
-        class="navbar navbar-expand-lg bg-main bg-body-tertiary p-3 p-lg-0 position-sticky top-0 z-3 shadow-sm mybg-nav"
-      >
+      <nav class="navbar bg-body-tertiary navbar-expand-lg p-3 p-lg-0 position-sticky top-0 z-3 shadow-sm">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">"等待替換 標題圖片"</a>
+          <a class="navbar-brand logo" href="./index.html"><img src="./photo/Logo.png" alt="LOGO" /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -62,1184 +64,274 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse p-lg-0 py-2" id="navbarNav">
+          <div class="collapse navbar-collapse p-lg-0 py-2 fs-nav" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item px-4 py-3">
                 <a class="nav-link active" aria-current="page" href="./index.html">民宿介紹</a>
               </li>
               <li class="nav-item px-4 py-3 active">
-                <a class="nav-link active" aria-current="page" href="#top">全部房間</a>
+                <a class="nav-link active" aria-current="page" href="./room.html">全部房間</a>
               </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item mybg-info px-4 py-3">
-                <a class="nav-link text-dark" href="#footer">聯絡資料</a>
+              <li class="nav-item px-4 py-3">
+                <a class="nav-link active" aria-current="page" href="./price.html">價格/住宿資訊</a>
+              </li>
+              <li class="nav-item px-4 py-3">
+                <a class="nav-link active" aria-current="page" href="./info.html">聯絡資料</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <main class="container bg-main z-n1 py-5 main_hight mt-4" id="main">
-        <div class="row justify-content-center g-3">
-          <div class="col-12">
-            <p class="text-center fs-1">全部房間</p>
-          </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/201-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 201號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 201號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_201"
-                  >
-                    查看更多
-                  </button>
-                </div>
-              </div>
+      <main class="container-xxl bg-gradient rounded-4 z-n1 py-5 my-5 rounded-top-0 rounded-start-0 rounded-bottom-5 bg-main2" id="main">
+        <div class="bg-room rounded-top-0 rounded-start-0 rounded-bottom-5">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <p class="fs-1 fw-bold p-3 text-white">全部房間</p>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/202-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 202號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 202號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_202"
-                  >
-                    查看更多
-                  </button>
+          <!-- 房間區塊容器 -->
+          <div class="row justify-content-center p-3 g-3" id="room">
+            <!-- 房間區塊 -->
+            <template v-for="(item) in roomNum" :key="`room${item}`">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card bg-card z-1 rounded-bottom-5 rounded-start-0">
+                  <img :src="`./photo/head/${item}-head.jpg`" class="w-100 card-img-top" alt="卡柏兒民宿 201號房" />
+                  <div class="card-body">
+                    <h5 class="card-title">卡柏兒民宿 {{item}}號房</h5>
+                    <p class="card-text">"等待替換 房間介紹"</p>
+                    <div class="text-end">
+                      <button
+                        type="button"
+                        class="btn bg-card-button"
+                        data-bs-toggle="modal"
+                        :data-bs-target="`#modal_${item}`"
+                      >
+                        查看更多
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/301-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 301號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 301號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_301"
-                  >
-                    查看更多
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/302-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 302號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 302號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_302"
-                  >
-                    查看更多
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/303-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 303號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 303號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_303"
-                  >
-                    查看更多
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card bg-card z-1">
-              <img src="./photo/head/501-head.jpg" class="w-100 card-img-top" alt="卡柏兒民宿 501號房" />
-              <div class="card-body">
-                <h5 class="card-title">卡柏兒民宿 501號房</h5>
-                <p class="card-text">"等待替換 房間介紹"</p>
-                <div class="text-end">
-                  <button
-                    type="button"
-                    class="btn bg-card-button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carousel_501"
-                  >
-                    查看更多
-                  </button>
-                </div>
-              </div>
-            </div>
+            </template>
           </div>
         </div>
+        <!-- 房間視窗 -->
+        <template v-for="(item, index) in roomNum" :key="`room_modal${index}`">
+          <div
+            class="modal fade"
+            :id="`modal_${item}`"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            :aria-labelledby="`modal_${item}Label`"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog bg-card modal-fullscreen">
+              <div class="modal-content bg-card">
+                <div class="vh-10 w-100 d-flex justify-content-end align-items-center">
+                  <button type="button" class="btn-close fs-1 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body vh-90">
+                  <div class="container-fluid h-100">
+                    <div class="row g-5 py-5 h-100">
+                      <div class="col-12 col-xxl-9 order-xxl-2 h-100">
+                        <div class="carousel slide carousel-fade h-100" :id="`modal_contrl_${item}`">
+                          <div class="container-fluid h-100">
+                            <div class="row h-100 align-content-center">
+                              <div class="col-12 h-75">
+                                <div class="slider h-100" :class="`slider-for-${item}`">
+                                  <template
+                                    v-for="(room_img, room_img_index  ) in roomData.room[item]"
+                                    :key="'img'+ room_img"
+                                  >
+                                    <div class="h-100 text-center">
+                                      <div class="w-100 h-100 d-flex justify-content-center">
+                                        <img
+                                          :src="`./photo/${item}/${room_img}.jpg`"
+                                          class="object-fit-cover"
+                                          :alt="`${room_img}.jpg`"
+                                        />
+                                      </div>
+                                    </div>
+                                  </template>
+                                </div>
+                              </div>
+                              <div class="col-12 h-25">
+                                <div class="slider slider-nav-style mb-dot" :class="`slider-nav-${item}`">
+                                  <template
+                                    v-for="(room_img, room_img_index  ) in roomData.room[item]"
+                                    :key="'img'+ room_img"
+                                  >
+                                    <div class="h-100 p-1">
+                                      <!-- 房間圖片 選擇區 到時候改縮圖 -->
+                                      <div class="w-100 h-100 d-flex justify-content-center">
+                                        <img
+                                          :src="`./photo/${item}/${room_img}.jpg`"
+                                          class="object-fit-cover"
+                                          :alt="`${room_img}.jpg`"
+                                        />
+                                      </div>
+                                    </div>
+                                  </template>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-xxl-3 order-xxl-1 bg-danger py-3 rounded-3">
+                        <div class="text-light">
+                          <h1 class="fs-1 fw-bold" :id="`modal_${item}Label`">{{item}}號房</h1>
+                          <div class="w-100 mt-3">
+                            <p class="fs-3 ms-auto">房型 : N人房</p>
+                            <p class="m-0">
+                              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam voluptatibus culpa nulla
+                              nam assumenda, doloremque animi deserunt? Perferendis mollitia error nihil rem accusantium
+                              incidunt quibusdam laboriosam cum vero, ex ratione.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
       </main>
 
-      <div class="backt_top position-fixed bottom-10 end-1">
-        <a href="#main" class="text-decoration-none text-dark" aria-label="回到最上方"><i class="bi bi-arrow-up-square-fill fs-1"></i></a>
-      </div>
-      <footer class="bg-main container-fluid align-items-center py-3 mt-4 border-top" id="footer">
-        <div class="row align-items-center">
-          <div class="col-6 col-lg-4">
-            <p class="fs-3">
-              <i class="bi bi-line"></i>
-              <span>卡柏兒 LINE ID : 12344859</span>
-            </p>
-          </div>
-          <div class="col-6 col-lg-4">
-            <p class="fs-3">
-              <i class="bi bi-telephone-fill"></i>
-              <span> 電話 : 0912345678 </span>
-            </p>
-          </div>
-          <div class="col-lg-4 col-12 d-flex align-items-center">
-            <span class="text-muted ms-auto mt-2 mt-md-0">© 2024 卡柏兒</span>
+      <!-- footer -->
+      <footer class="bg-footer footer-container w-100 d-flex flex-column justify-content-end p-0 m-0" id="footer">
+        <div class="footer-content-banner w-100"></div>
+        <div class="footer-content-container w-100 d-flex flex-column justify-content-center flex-grow-1">
+          <div class="container-fluid container-xl h-100 d-flex flex-column justify-content-center">
+            <div class="row my-5 align-content-center h-footer-title">
+              <div class="col-12 col-lg-6 h-100">
+                <div class="d-flex h-100 align-items-center">
+                  <img src="./photo/K.ico" class="h-100 object-fit-cover rounded-circle m-2" alt="" srcset="" />
+                  <p class="fs-1 fw-bold text-light p-0 m-0 ms-2">
+                    <span>卡柏兒</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row h-50 mb-5">
+              <div class="col-12 col-xl">
+                <p class="fs-1 fw-bold text-light mt-xl-0 mt-5">聯絡我們</p>
+                <div class="text-light m-0 mt-auto">
+                  <p class="m-0">123 台北市信義區永業路黃金大廈100號</p>
+                  <p class="m-0">電話：+886 1234 5678</p>
+                  <p class="m-0">hello@reallygreatsite.com.tw</p>
+                </div>
+              </div>
+              <div class="col-12 col-xl">
+                <p class="fs-1 fw-bold text-light mt-xl-0 mt-5">客服時間</p>
+                <div class="text-light m-0 mt-auto">
+                  <p class="m-0">每日：9:00 - 21:00</p>
+                </div>
+              </div>
+              <div class="col-6 col-xl align-self-end ms-auto">
+                <div class="border border-5 border-white mt-xl-0 my-5">
+                  <div class="d-flex fs-1 fw-bold text-light m-3">
+                    <span> 社群連結 </span>
+                    <div class="ms-auto">
+                      <span> <i class="fa-brands fa-line"></i> </span>
+                      <span> <i class="fa-brands fa-facebook"></i> </span>
+                      <span> <i class="fa-brands fa-airbnb"></i> </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
     </div>
-
-    <div
-      class="modal fade"
-      id="carousel_201"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_201Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_201Label">201號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_201">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_201"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/201/201-10.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="201"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_201"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="carousel_202"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_202Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_202Label">202號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_202">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_202"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/202/202-10.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="202"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_202"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="carousel_301"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_301Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_301Label">301號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_301">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_301"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-10.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-11.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-12.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/301/301-13.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="301"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_301"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="carousel_302"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_302Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_302Label">302號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_302">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_302"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/302/302-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="302"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_302"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="carousel_303"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_303Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_303Label">303號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_303">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_303"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/303/303-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="303"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_303"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="carousel_501"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="carousel_501Label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog bg-card modal-fullscreen">
-        <div class="modal-content bg-card">
-          <div class="modal-header">
-            <h1 class="modal-title fs-1" id="carousel_501Label">501號房</h1>
-            <button type="button" class="btn-close fs-1" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="carousel slide carousel-fade h-100" id="carousel_contrl_501">
-              <div class="container-fluid h-100">
-                <div class="row h-100 align-content-center">
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carousel_contrl_501"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                  </div>
-                  <div class="col-8 h-100">
-                    <p class="text-center fs-1 text-white">房間內裝</p>
-                    <div class="carousel-inner h-80" id="carousel">
-                      <div class="carousel-item h-100 active">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-1.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-2.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-3.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-4.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-5.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-6.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-7.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-8.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-9.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-10.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-11.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                      <div class="carousel-item h-100">
-                        <div class="text-center w-100 h-100">
-                          <img
-                            src="./photo/501/501-12.jpg"
-                            loading="lazy"
-                            class="object-fit-scale w-100 mvh-100"
-                            alt="501"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carousel_contrl_501"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script type="module">
+    const room = await (await fetch("./room.json")).json();
+
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return {
+          roomData: room,
+        };
+      },
+      mounted() {
+        Object.keys(this.roomData.room).forEach((roomNumber) => {
+          $(`.slider-for-${roomNumber}`)
+            .not(".slick-initialized")
+            .slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+              fade: true,
+              autoplay: true,
+              autoplaySpeed: 2000,
+              asNavFor: `.slider-nav-${roomNumber}`,
+              lazyLoad: "ondemand",
+            });
+          $(`.slider-nav-${roomNumber}`)
+            .not(".slick-initialized")
+            .slick({
+              slidesToShow: 5,
+              slidesToScroll: 1,
+              asNavFor: `.slider-for-${roomNumber}`,
+              variableWidth: true,
+              dots: true,
+              centerMode: true,
+              focusOnSelect: true,
+              centerPadding: "10px",
+              lazyLoad: "ondemand",
+            });
+          $(`#modal_${roomNumber}`).on("shown.bs.modal", function (event) {
+            $(`.slider-for-${roomNumber}`).slick("setPosition");
+            $(`.slider-nav-${roomNumber}`).slick("setPosition");
+          });
+        });
+      },
+      computed: {
+        roomNum() {
+          return Object.keys(this.roomData.room);
+        },
+      },
+    });
+    app.mount("#main");
+  </script>
+
   <style>
-    :root {
-      --dark-color: #a68a7b;
-      --background-color: #d9bca3;
-      --info-hover-color: #8c7268;
-      --card-color: #493a35;
-      --body-color: #f9d8bb;
+    @import url("./css/style.css");
+    .slider-nav .slick-slide {
+      cursor: pointer;
     }
-    .mvh-100 {
+    .slider img {
+      max-width: 100%;
       max-height: 100%;
+      object-fit: cover !important;
     }
-    .h-80 {
-      height: 80%;
+    .slick-track,
+    .slick-list {
+      height: 100%;
     }
-    .main_hight {
-      min-height: calc(100vh - 72px);
+    .slider-nav-style {
+      height: calc(100% - 28px);
     }
-    body {
-      background-color: var(--body-color);
+    .vh-10 {
+      height: 10vh !important;
     }
-    .navbar {
-      background-clip: padding-box !important;
+    .vh-90 {
+      height: 90vh !important;
     }
-    .bg-main {
-      background-color: var(--background-color);
+    .bg-main{
+      background-color: #efe9e4;
     }
-    .bg-card {
-      color: var(--body-color) !important;
-      background-color: var(--card-color) !important;
-    }
-    .bg-card-button {
-      color: var(--card-color) !important;
-      background-color: var(--body-color) !important;
-    }
-    .mybg-nav {
-      background-color: var(--background-color) !important;
-    }
-    .mybg-body {
-      background-color: var(--background-color);
-    }
-    .nav-item.active {
-      background-color: var(--body-color);
-      padding: 14px 22px !important;
-      border: #8c7268 solid 2px;
-    }
-    .nav-item:hover {
-      background-color: var(--dark-color);
-    }
-    .mybg-info {
-      background-color: var(--dark-color);
-    }
-    .mybg-info:hover {
-      background-color: var(--info-hover-color);
-    }
-    .nav-item.mybg-info:hover {
-      transition: all 0.1s linear;
-      padding: 12px 20px 12px 20px !important;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      border: var(--dark-color) solid 4px;
-    }
-    .bottom-10 {
-      bottom: 10vh;
-    }
-    .end-1 {
-      right: 1vh;
+    .bg-main2{
+      background-color: #9d5b2c;
     }
   </style>
 </html>

@@ -1,0 +1,13 @@
+{
+  "name": "k_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "sass scss/styles.scss css/styles.css",
+    "watch-css": "sass --watch scss/styles.scss css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
